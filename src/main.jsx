@@ -11,7 +11,7 @@ import { AuthLayout } from "./components/index.js";
 import AddPost from "./pages/AddPost";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login.jsx";
-import EditPost from "./pages/EditPost";
+import EditPost from "./pages/Editpost";
 
 import Post from "./pages/Post";
 
