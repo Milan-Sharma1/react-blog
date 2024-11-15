@@ -3,9 +3,12 @@ import appwriteservice from "../appwrite/config";
 import { Container, PostCard } from "../components";
 const AllPosts = () => {
   const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    appwriteservice.getAllPost().then((posts) => setPosts(posts));
-  }, []);
+  useEffect(() => {}, []);
+  appwriteservice.getAllPost([]).then((posts) => {
+    if (posts) {
+      setPosts(posts.documents);
+    }
+  });
 
   return (
     <div className="w-full py-8">

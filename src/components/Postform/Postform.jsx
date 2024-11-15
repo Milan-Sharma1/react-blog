@@ -9,7 +9,7 @@ const Postform = ({ post }) => {
     useForm({
       defaultValues: {
         title: post?.title || "",
-        slug: slug?.slug || "",
+        slug: post?.slug || "",
         content: post?.content || "",
         status: post?.status || "",
       },
@@ -26,21 +26,21 @@ const Postform = ({ post }) => {
       if (file) {
         await appwriteService.deleteFile(post.featuredImage);
       }
-      const dbpost = await appwriteService.updatePost(post.id, {
+      const dbpost = await appwriteService.updatePost(post.$id, {
         ...data,
         featuredImage: file?.$id || undefined,
       });
       if (dbpost) navigate(`/post/${dbpost.$id}`);
     } else {
       const file = data.image[0]
-        ? await appwriteService.updateFile(data.image[0])
+        ? await appwriteService.uploadFile(data.image[0])
         : null;
       if (file) {
         const fileId = file.$id;
         data.featuredImage = fileId;
         const dbpost = await appwriteService.createPost({
           ...data,
-          userData: userData.$id,
+          userId: userData.$id,
         });
         if (dbpost) navigate(`/post/${dbpost.$id}`);
       }
@@ -59,6 +59,9 @@ const Postform = ({ post }) => {
   }, []);
 
   useEffect(() => {
+    if (post && post.$id) {
+      setValue("slug", post.$id);
+    }
     const subscription = watch((value, { name }) => {
       if (name === "title") {
         setValue("slug", slugTransform(value.title, { shouldValidate: true }));

@@ -4,7 +4,7 @@ import authService from "../appwrite/auth";
 import { Button, Input, Logo } from "./index";
 import { useDispatch } from "react-redux";
 import { login } from "../store/authSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Signup = () => {
   const [error, setError] = useState(null);
