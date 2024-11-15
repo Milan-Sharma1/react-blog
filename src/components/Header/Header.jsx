@@ -9,7 +9,7 @@ const Header = () => {
   const navigate = useNavigate();
   const navItems = [
     {
-      name: Home,
+      name: "Home",
       slug: "/", //slug is basically url ,we can also use url instead of slug
       active: true,
     },

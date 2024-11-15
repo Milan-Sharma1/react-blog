@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { authService } from "../appwrite/auth";
+import authService from "../appwrite/auth";
 import { Button, Input, Logo } from "./index";
 import { useDispatch } from "react-redux";
 import { login } from "../store/authSlice";
