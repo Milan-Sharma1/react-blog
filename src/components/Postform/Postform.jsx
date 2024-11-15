@@ -9,7 +9,7 @@ const Postform = ({ post }) => {
     useForm({
       defaultValues: {
         title: post?.title || "",
-        slug: post?.slug || "",
+        slug: post?.$id || "",
         content: post?.content || "",
         status: post?.status || "",
       },
@@ -59,9 +59,6 @@ const Postform = ({ post }) => {
   }, []);
 
   useEffect(() => {
-    if (post && post.$id) {
-      setValue("slug", post.$id);
-    }
     const subscription = watch((value, { name }) => {
       if (name === "title") {
         setValue("slug", slugTransform(value.title, { shouldValidate: true }));
@@ -73,7 +70,7 @@ const Postform = ({ post }) => {
       subscription.unsubscribe();
     };
   }, [watch, slugTransform, setValue]);
-
+  
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
       <div className="w-2/3 px-2">
