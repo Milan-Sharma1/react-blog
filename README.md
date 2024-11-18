@@ -38,6 +38,12 @@ Once the project is set up and running, users can:
 - View and interact with published blog posts.
 - Use the modern, responsive UI that adapts to all screen sizes.
 
+## Developer's Note
+
+I acknowledge that the user interface of this project is not up to the mark. The primary purpose of this project was to dive deep into learning the **React** ecosystem, exploring the technologies in this stack, and understanding **industry-grade coding practices**. It forms an essential part of my React learning journey.  
+
+For a showcase of modern UI design, feel free to check out my other repositories where I have focused on aesthetics and user experience. Additionally, this project's UI is expected to evolve and improve significantly in the future.
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request with your proposed changes. Ensure your changes are well-documented and follow the existing code style.
@@ -60,4 +66,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For any questions or inquiries, feel free to reach out to me at [your-email@example.com](mailto:your-email@example.com).
+For any questions or inquiries, feel free to reach out to me at [hello@milansharma.me](mailto:hello@milansharma.me).
